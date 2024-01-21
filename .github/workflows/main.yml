@@ -1,6 +1,11 @@
-name: CI - Build & Test
+name: CI
 
-on:
-  push:
-    branches:
-      - main
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
